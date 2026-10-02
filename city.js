@@ -55,7 +55,7 @@
       const poly = L.geoJSON(b.geom, { style: { color: "#33475b", weight: 1.4, fillColor: k < 0 ? "#e5e8eb" : RAMP[k], fillOpacity: 0.55 } });
       poly.on("click", () => go("b=" + b.id)); poly.bindTooltip(`${esc(b.name)}: ${MET[metric][1](s[metric])}`, { sticky: true });
       blockLayer.addLayer(poly);
-      labels.addLayer(L.marker(b.c, { interactive: false, icon: L.divIcon({ className: "blab", html: esc(b.name.split(" / ")[0]) + "<br>" + fmt(s.n), iconSize: null }) }));
+      const lm = L.marker(b.c, { interactive: false, icon: L.divIcon({ className: "blab", html: esc(b.name.split(" / ")[0]) + "<br>" + fmt(s.n), iconSize: null }) }); lm._bb = poly.getBounds(); labels.addLayer(lm);
     }
     blockLayer.addTo(map);
     pinLayer = L.layerGroup();
@@ -67,7 +67,10 @@
       const m = L.marker([h.lat, h.lon], { icon: L.divIcon({ className: "", html: `<div title="${esc(h.n)}" style="width:18px;height:18px;border-radius:4px;background:${h.tr ? "#c0392b" : "#e74c3c"};color:#fff;font:700 12px/18px system-ui;text-align:center;border:1.5px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)">H</div>`, iconSize: [18, 18] }) });
       m.bindTooltip(esc(h.n) + (h.tr ? ` · ${h.tr} trauma` : "") + (h.er ? " · ER" : "")); pinLayer.addLayer(m);
     }
-    const showPins = () => { blockLayer.eachLayer(l => l.setStyle({ fillOpacity: map.getZoom() >= 12 ? 0.12 : 0.55 })); if (map.getZoom() >= 12) { if (!map.hasLayer(pinLayer)) pinLayer.addTo(map); if (map.hasLayer(labels)) map.removeLayer(labels); } else { if (map.hasLayer(pinLayer)) map.removeLayer(pinLayer); if (!map.hasLayer(labels)) labels.addTo(map); } };
+    const fitLabels = () => labels.eachLayer(m => {  // a label shows only when its block is at least ~48 px wide on screen (no pile-ups in small central blocks)
+      const a = map.latLngToContainerPoint(m._bb.getSouthWest()), c = map.latLngToContainerPoint(m._bb.getNorthEast()), el = m.getElement && m.getElement();
+      if (el) el.style.display = Math.abs(c.x - a.x) >= 48 ? "" : "none"; });
+    const showPins = () => { blockLayer.eachLayer(l => l.setStyle({ fillOpacity: map.getZoom() >= 12 ? 0.12 : 0.55 })); if (map.getZoom() >= 12) { if (!map.hasLayer(pinLayer)) pinLayer.addTo(map); if (map.hasLayer(labels)) map.removeLayer(labels); } else { if (map.hasLayer(pinLayer)) map.removeLayer(pinLayer); if (!map.hasLayer(labels)) labels.addTo(map); fitLabels(); } };
     if (window.__sp) map.off("zoomend", window.__sp); window.__sp = showPins; map.on("zoomend", showPins); showPins();
     if (legend) legend.remove();
     legend = L.control({ position: "bottomleft" }); legend.onAdd = () => { const el = L.DomUtil.create("div", "legend");
@@ -150,7 +153,7 @@
   async function route() {
     const h = decodeURIComponent(location.hash.slice(1)), [c, sub] = h.split("/"), want = c === "memphis" ? "memphis" : "nashville";
     if (want !== city) { const d = await load(want); city = want; document.querySelectorAll("#citysw button").forEach(b => b.classList.toggle("on", b.dataset.c === city)); draw();
-      if (!sub) map.fitBounds(L.geoJSON({ type: "FeatureCollection", features: d.blocks.map(b => ({ type: "Feature", geometry: b.geom })) }).getBounds(), { padding: [10, 10] }); }
+      if (!sub) map.fitBounds(L.geoJSON({ type: "FeatureCollection", features: d.blocks.map(b => ({ type: "Feature", geometry: b.geom })) }).getBounds(), { padding: [0, 0] }); }
     if (window.__hl && !(sub || "").startsWith("l=")) { map.removeLayer(window.__hl); window.__hl = null; }
     if (sub && sub.startsWith("b=")) blockCard(sub.slice(2)); else if (sub && sub.startsWith("l=")) listingCard(sub.slice(2)); else overview();
     $("#pbody").parentElement.scrollTop = 0;
