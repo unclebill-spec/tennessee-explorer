@@ -9,7 +9,8 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
   - Edit one, copy it to the other, and test and publish **both**.
   - Per-state settings come from `K.meta.state`, which is the `STATE` dict in each `build.py`: name, bounds, cities, labels, solo buttons, localStorage prefix, and the other state's URL.
   - Kentucky's values are the defaults inside app.js (`const ST = Object.assign({...}, K.meta.state)`, exposed as `window.KYX_ST`).
-- State switcher: the "KY | TN" control next to Layers, plus a link in the Top 10s menu.
+- State switcher: the "KY | TN" control next to Layers (inside the collapsed Search pill), plus a link in the Top 10s menu.
+- Top pills: "Map key" (top left) and "Search" (top right) start collapsed. Phone Back, a tap outside, or Esc closes them. Test with `/workspace/kentucky/perf/test_pnl.py BASE TAG`.
 - localStorage keys use `ST.ls` (`kyx_` / `tnx_`). The profile keys `kyx_prof*` are shared on purpose, because both sites are on the same origin (unclebill-spec.github.io).
 - Service-worker caches are named `tnx-*` here and `kyx-*` in Kentucky. Keep them different, again because of the shared origin.
 - `build.py` here is a port of Kentucky's:
@@ -29,6 +30,11 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
 - Compare areas: `/workspace/kentucky/compare/build_areas.py` writes one `areas.json` with KY and TN cities to **both** projects.
   - The TN page shows TN's 5 largest cities and their KY counterparts.
   - FBI crime numbers are pending: `compare/crime.py` is waiting out the DEMO_KEY rate limit, and the TN ORIs still need adding.
+- Homes and land (Phase 2):
+  - `scripts/tn_zsearch.py` pulls Zillow's public search results for every county in three searches (`p5` 5+ acres, `p1` 1+ acre, `nh` near-hospital homes) into `data/zsearch/<cat>/<county>.json`. It sleeps between requests and stops on a 403 or CAPTCHA.
+  - `scripts/tn_listings_build.py` writes `listings.json` and `listing-photos/<id>/` (up to 4 photos each). It picks one category per listing and gets OSRM drive times to the nearest acute, Level I/II trauma and qualifying ER hospitals (cached in `data/zsearch/drives_cache.json`). It ranks by county Appeal, price, land or size, and drive time, then fetches each pick's listing page (cached in `data/zsearch/detail_cache.json`).
+  - Statewide categories are detached houses and manufactured homes only. Condos and townhomes are left for the Phase 5 city sub-maps.
+  - `scripts/bargains.py` flags up to 15 bargains against nearby Zillow comps (`data/zsearch/*/*.json`). It runs on every build.
 - Thumbnails: `explorer/fetch_thumbs.py` (Wikidata/Commons photos, else an Esri satellite snapshot).
 
 ## Build, test, publish
