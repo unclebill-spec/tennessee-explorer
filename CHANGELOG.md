@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-02
+- 01:54 ET: Phase 5: Nashville and Memphis homes by area. New city page (city.html) with 14 Nashville community planning areas and 20 Memphis-area blocks (14 Memphis 3.0 districts + 6 suburbs), 3,936 + 3,377 houses, condos and townhomes for sale, block colors by matching homes / median price / $ per sq ft / ER drive / condo share, block and listing cards, per-profile city criteria (default house/condo/townhome, <= $600k, 2+ bd, 2+ ba, 1,000+ sq ft, no acreage minimum); links from the Layers panel and the Davidson and Shelby county cards
 - 01:08 ET: Phase 4: attractions (161: parks, zoos, caves, water parks, aquariums, 70 museums, 74 campgrounds), 27 always-on TN standouts, 59 businesses and 28 odd buildings for sale (Crexi) with Top 10s; airports labels
 - 00:57 ET: Phase 3: permanent RN jobs (2,489 at 111 TN sites from 25+ systems; HCA partial via web search) and travel RN jobs (588 at 38 hospitals); Top 10s for perm ER/SD-MS/ICU, bonuses and travel; airports layer (11)
 - 00:12 ET: Phase 2, homes and land: 385 Tennessee listings from Zillow's public search (160 homes on 5+ acres, 140 homes on 1+ acre, 85 homes within 10 minutes of a qualifying ER hospital), each with up to 4 photos, drive times to the nearest hospital and trauma center, profile matching, and 15 bargains flagged against nearby comps (Deals of the Week Top 10). Shared app code synced from Kentucky (zoom-based color fade).

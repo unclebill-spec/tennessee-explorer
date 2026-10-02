@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nashville &amp; Memphis homes by area — Tennessee Explorer</title>
+<meta name="description" content="Nashville (Davidson County) and Memphis (Shelby County) homes, condos and townhomes by planning area: counts, median prices, price per square foot and drive minutes to the nearest ER and trauma center.">
+<meta property="og:title" content="Nashville &amp; Memphis homes by area — Tennessee Explorer">
+<meta property="og:description" content="Homes, condos and townhomes by planning area, with median prices and ER drive minutes.">
+<meta name="theme-color" content="#1f3b57">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="city.css?v=202610020154">
+</head>
+<body>
+<header id="cbar">
+  <a class="back" href="index.html" title="Back to the Tennessee map">‹ TN map</a>
+  <div class="seg" id="citysw"><button data-c="nashville">Nashville</button><button data-c="memphis">Memphis</button></div>
+  <select id="metric" aria-label="Color blocks by">
+    <option value="n">Homes that match</option><option value="mp">Median price</option><option value="ppsf">Median $ / sq ft</option><option value="er">Median ER drive</option><option value="cs">Condo + townhome share</option>
+  </select>
+  <button id="critbtn" class="pill">Criteria</button>
+  <select id="prof" aria-label="Profile"></select>
+</header>
+<div id="cmap"></div>
+<aside id="panel"><div id="pgrip"></div><div id="pbody"><p class="muted">Loading…</p></div></aside>
+<div id="crit" hidden></div>
+<script>window.CITYV="202610020154"</script>
+<script src="vendor/leaflet.js"></script>
+<script src="city.js?v=202610020154"></script>
+</body>
+</html>

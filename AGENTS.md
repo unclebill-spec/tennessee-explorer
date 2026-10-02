@@ -52,13 +52,20 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
   - The app has only 5 attraction types, so zoos, caves and the incline railway use type `amusement` with a `label` ("Zoo", "Cave attraction"). `build.py` shows the label as the kind, but the shared card kicker still says "Amusement park".
 - Standouts: `data/featured.json` lists the featured attraction and activity ids (icons at every zoom).
 - Top 10 businesses: `scripts/top_lists.py` (TN copy). Its appeal words (cabins, RV park, lodging) must appear in the title or category; Smokies and TN lake names add a small bonus.
+- City sub-maps (Phase 5, TN only, not shared with KY): `city.html` + `city.js` + `city.css`, with data in `city/nashville.json` and `city/memphis.json`.
+  - Blocks: `scripts/tn_city_blocks.py` writes `data/city/blocks.json`. Nashville uses Metro Planning's 14 Community Planning Areas (all of Davidson). Memphis uses the 14 Memphis 3.0 planning districts plus 6 suburbs (Bartlett, Germantown, Collierville, Arlington, Lakeland, Millington) from the Census 2023 place file.
+  - Homes: `scripts/tn_city_search.py` runs Zillow public searches with the county as the region and each block's bounding box as the map bounds. It keeps houses, condos and townhomes up to $900k with 1+ bd, caches results in `data/city/zs/<city>/`, and stops at the first block. `--split` refetches capped blocks in 2x2 and then 4x4 tiles.
+  - `scripts/tn_city_build.py` assigns listings to block polygons and adds OSRM drive times to the nearest qualifying ER and the nearest Level I/II trauma center (cached in `data/city/drives_cache.json`). Photos are Zillow's own thumbnails, linked rather than copied.
+  - Criteria are set in the browser for each main-app profile slot (names come from `kyx_prof_*`) and saved under `tnx_city_<slot>`. Defaults: house, condo or townhome, up to $600k, 2+ bd, 2+ ba, 1,000+ sq ft, no acreage minimum. The shared `profiles.js` is not changed.
+  - `tnlinks.js` (TN only, loaded after `app.js`) adds the city link to the Layers panel and to the Davidson and Shelby county cards. `publish.sh` copies the city files, and `build.py` stamps `city.html`.
+  - Test: `perf/test_city.py BASE TAG`.
 - Thumbnails: `explorer/fetch_thumbs.py` (Wikidata/Commons photos, else an Esri satellite snapshot).
 
 ## Build, test, publish
 - Build: `cd explorer && /usr/bin/python3 build.py`. Serve locally with `python3 -m http.server 8780`.
 - Publish: `cd publish && PATH=/usr/bin:$PATH ./publish.sh -m "What changed"`. It adds a CHANGELOG entry, pulls before work and before the push, runs `secscan.sh` before **every** push (including the first), minifies, pushes and waits for Pages.
   - Check the result with `/usr/bin/python3 verify.py https://unclebill-spec.github.io/tennessee-explorer/`.
-- TN tests: `perf/test_homes.py`, `perf/test_perm.py`, `perf/test_p4.py`, `perf/smoke.py` (each takes BASE TAG).
+- TN tests: `perf/test_homes.py`, `perf/test_perm.py`, `perf/test_p4.py`, `perf/test_city.py`, `perf/smoke.py` (each takes BASE TAG).
 - Tests: the Kentucky suites in `/workspace/kentucky/perf/*.py` take a base URL. Some have KY-specific expectations (city names, counties).
 
 ## Phases (Bill's plan)
