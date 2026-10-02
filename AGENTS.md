@@ -35,6 +35,17 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
   - `scripts/tn_listings_build.py` writes `listings.json` and `listing-photos/<id>/` (up to 4 photos each). It picks one category per listing and gets OSRM drive times to the nearest acute, Level I/II trauma and qualifying ER hospitals (cached in `data/zsearch/drives_cache.json`). It ranks by county Appeal, price, land or size, and drive time, then fetches each pick's listing page (cached in `data/zsearch/detail_cache.json`).
   - Statewide categories are detached houses and manufactured homes only. Condos and townhomes are left for the Phase 5 city sub-maps.
   - `scripts/bargains.py` flags up to 15 bargains against nearby Zillow comps (`data/zsearch/*/*.json`). It runs on every build.
+- RN jobs (Phase 3):
+  - `scripts/tn_perm_jobs.py` reuses `/workspace/kentucky/scripts/perm_jobs_collect.py` (imported, readers re-pointed at TN career sites) and writes `data/perm_jobs.json`. A full run takes about 25 minutes (Regional One's Paycom portal is about 14 of them).
+    - `--only key1,key2` writes `data/perm_jobs.partial.json`. Then run `scripts/perm_merge.py <partial...>` to swap those systems into `perm_jobs.json`.
+    - Hospital matching: TN hospitals come from `data/statewide/tn_hospitals_points.csv`, using per-system `RULES` regexes first (a `None` target means a known non-hospital site), then name tokens, then city.
+    - Ascension and Covenant list pages give no facility, so the job page is read (Ascension's `locationName`; Covenant's "Facility … Department Name").
+    - VUMC TempForce posts are internal temporary agency jobs, so they are marked non-permanent.
+    - HCA blocks automated access. `data/hca_search_jobs.json` holds only the job pages a simple web search found, and coverage is marked partial.
+  - `scripts/tn_travel_jobs.py` writes `data/travel_jobs.json` from Vivian and Advantis public TN listings in `/workspace/tj_tn`. Children's hospitals and non-hospital sites are excluded.
+  - Test: `/usr/bin/python3 perf/test_perm.py BASE TAG` (TN copy of the KY test: Nashville, VUMC, Davidson).
+- Airports (Phase 4): `data/airports/airports.py` writes `data/airports.json` from Wikipedia airline and destination tables, with photos in `data/airports/img/`. It covers BNA, MEM, TYS, CHA and TRI plus ATL, HSV, AVL, SDF, BHM and PAH.
+- For sale (Phase 4): `data/forsale/crexi_list.py` lists Crexi's public TN listings under $1M by type into `crexi_tn_all.json`, and `crexi_details.py` saves each listing's details. Picks are hand-made in `curate.py`, and `make_forsale.py` writes `data/businesses_for_sale.json` and `data/buildings_for_sale.json` with photos.
 - Thumbnails: `explorer/fetch_thumbs.py` (Wikidata/Commons photos, else an Esri satellite snapshot).
 
 ## Build, test, publish
