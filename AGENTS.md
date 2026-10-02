@@ -46,12 +46,19 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
   - Test: `/usr/bin/python3 perf/test_perm.py BASE TAG` (TN copy of the KY test: Nashville, VUMC, Davidson).
 - Airports (Phase 4): `data/airports/airports.py` writes `data/airports.json` from Wikipedia airline and destination tables, with photos in `data/airports/img/`. It covers BNA, MEM, TYS, CHA and TRI plus ATL, HSV, AVL, SDF, BHM and PAH.
 - For sale (Phase 4): `data/forsale/crexi_list.py` lists Crexi's public TN listings under $1M by type into `crexi_tn_all.json`, and `crexi_details.py` saves each listing's details. Picks are hand-made in `curate.py`, and `make_forsale.py` writes `data/businesses_for_sale.json` and `data/buildings_for_sale.json` with photos.
+- Attractions (Phase 4): `data/attractions/make_attractions.py` writes `data/attractions.json` (161 items: 74 campgrounds, 70 museums, 11 parks/zoos/caves, 4 water parks, 2 aquariums) with photos in `data/attractions/img/`.
+  - Sources: hand-picked parks, zoos and caves via Wikipedia (`MANUAL_LL` has Nominatim coordinates where an article has none); museums from Wikidata (`wd2.py` writes `wd.json`, and museums whose article says "was a museum" are dropped); Recreation.gov federal campgrounds (`rec_tn.json`); and 35 TN state-park campgrounds.
+  - Overpass (OSM) was unreachable from the box on 2026-10-02; `ovp.sh` is there for a retry.
+  - The app has only 5 attraction types, so zoos, caves and the incline railway use type `amusement` with a `label` ("Zoo", "Cave attraction"). `build.py` shows the label as the kind, but the shared card kicker still says "Amusement park".
+- Standouts: `data/featured.json` lists the featured attraction and activity ids (icons at every zoom).
+- Top 10 businesses: `scripts/top_lists.py` (TN copy). Its appeal words (cabins, RV park, lodging) must appear in the title or category; Smokies and TN lake names add a small bonus.
 - Thumbnails: `explorer/fetch_thumbs.py` (Wikidata/Commons photos, else an Esri satellite snapshot).
 
 ## Build, test, publish
 - Build: `cd explorer && /usr/bin/python3 build.py`. Serve locally with `python3 -m http.server 8780`.
 - Publish: `cd publish && PATH=/usr/bin:$PATH ./publish.sh -m "What changed"`. It adds a CHANGELOG entry, pulls before work and before the push, runs `secscan.sh` before **every** push (including the first), minifies, pushes and waits for Pages.
   - Check the result with `/usr/bin/python3 verify.py https://unclebill-spec.github.io/tennessee-explorer/`.
+- TN tests: `perf/test_homes.py`, `perf/test_perm.py`, `perf/test_p4.py`, `perf/smoke.py` (each takes BASE TAG).
 - Tests: the Kentucky suites in `/workspace/kentucky/perf/*.py` take a base URL. Some have KY-specific expectations (city names, counties).
 
 ## Phases (Bill's plan)
