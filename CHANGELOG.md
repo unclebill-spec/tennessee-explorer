@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-03
+- 15:53 ET: Bargains are purple with a star everywhere: the right-side Bargain filter button (column and landscape wheel), the Map key heading, the deal note on cards and the Top 10 'Bargain' mark now use the same purple star (#8e24aa) as the bargain pins and Deals pill instead of the yellow emoji
 - 15:34 ET: Border items: pins up to ~15 mi outside the state line that meet this map's own criteria, from Kentucky (homes, jobs, hospitals, graded schools...) plus Virginia, North Carolina, Georgia, Alabama, Mississippi, Arkansas and Missouri. Same icons, filters, Top 10s and share links; each card is tagged with its state; county/town stats and appeal scores unchanged (explorer/border.json, shared border_build.py + build.py hook + app.js/style.css)
 - 14:37 ET: Purple bargain icon (pins, groups, Map key, Deals pill); bottom Top 10 pills show exactly 3 whole buttons and snap one button or one page at a time; right-side filter buttons scroll with the mouse wheel and wheel events over them no longer zoom the map
 - 14:04 ET: Add ski areas and notable mountain peaks layers: ski/peak icons, cards with trails, lifts, vertical, snowfall, season, ticket and pass prices (season + source labeled), discounts, special days; peaks with elevation, prominence, activities, estimated summit weather; Ski and Peaks solo buttons, Map key, zoom tiers, share links #ski= / #peak=
