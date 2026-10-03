@@ -1,0 +1,1 @@
+KYXD("_b-poinsett-county-ar",{"school":{"bar-s050004801346":{"addr":"412 S. Main St.","phone":"(870) 487-2259","grades":"03–06","level":"Elementary","nces":"050004801346","levels":{},"bst":"AR","bmi":11.5,"bco":"Poinsett County, AR","src":"NCES Common Core of Data 2024-2025 (school directory; no state grade on this map)"}}});

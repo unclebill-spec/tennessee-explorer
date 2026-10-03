@@ -1,0 +1,1 @@
+KYXD("_b-grayson-county-va",{"school":{"bva-s510169002806":{"addr":"6459 Troutdale Hwy.","phone":"(276) 579-2235","grades":"PK–07","level":"Elementary","nces":"510169002806","levels":{},"bst":"VA","bmi":13.6,"bco":"Grayson County, VA","src":"NCES Common Core of Data 2024-2025 (school directory; no state grade on this map)"}}});

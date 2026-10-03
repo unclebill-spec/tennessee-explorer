@@ -1,0 +1,1 @@
+KYXD("_b-tunica-county-ms",{"school":{"bms-s280429001014":{"addr":"7743 Old Hwy 61 N","phone":"(662) 357-1077","grades":"PK–05","level":"Elementary","nces":"280429001014","levels":{},"bst":"MS","bmi":14.4,"bco":"Tunica County, MS","src":"NCES Common Core of Data 2024-2025 (school directory; no state grade on this map)"}}});

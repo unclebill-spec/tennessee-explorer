@@ -1,0 +1,1 @@
+KYXD("_b-jackson-county-nc",{"school":{"bnc-s370234002067":{"addr":"884 Us Hwy 441N","phone":"(828) 497-5535","grades":"PK–08","level":"Elementary","nces":"370234002067","levels":{},"bst":"NC","bmi":13.2,"bco":"Jackson County, NC","src":"NCES Common Core of Data 2024-2025 (school directory; no state grade on this map)"}}});

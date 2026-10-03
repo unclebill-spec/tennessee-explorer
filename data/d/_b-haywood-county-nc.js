@@ -1,0 +1,1 @@
+KYXD("_b-haywood-county-nc",{"school":{"bnc-s370204000900":{"addr":"71 Learning Lane","phone":"(828) 627-6565","grades":"KG–05","level":"Elementary","nces":"370204000900","levels":{},"bst":"NC","bmi":13.4,"bco":"Haywood County, NC","src":"NCES Common Core of Data 2024-2025 (school directory; no state grade on this map)"}}});
