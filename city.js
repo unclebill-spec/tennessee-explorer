@@ -83,7 +83,7 @@
   function overview() {
     const d = D[city], arr = d.blocks.slice().sort((a, b) => (stats[b.id][metric] ?? -1) - (stats[a.id][metric] ?? -1));
     const all = d.blocks.reduce((t, b) => t + stats[b.id].n, 0), cl = classes();
-    $("#pbody").innerHTML = `<div class="kick">${esc(d.county)} County · ${d.blocks.length} areas</div><h2>${esc(d.name)}</h2>
+    $("#pbody").innerHTML = `<div class="kick">${esc(d.county)} County · ${d.blocks.length} areas</div><h2>${esc(d.name)}</h2>${CARD[city] ? `<a class="lnk cardlnk" href="index.html#county=${encodeURIComponent(CARD[city][0])}">${esc(CARD[city][1])} ›</a>` : ""}
       <p class="muted">${fmt(all)} of ${fmt(d.listings.length)} listed homes match <button class="lnk" id="ec">${esc(critLine())}</button>${slot !== "all" ? " (" + esc(slot + " " + pName(slot)) + ")" : ""}.</p>
       <h3>Areas by ${MET[metric][0].toLowerCase()}</h3><ul class="blist">${arr.map(b => { const s = stats[b.id], k = cl(s[metric]); return `<li data-b="${b.id}"><span><span class="sw" style="background:${k < 0 ? "#e5e8eb" : RAMP[k]}"></span>${esc(b.name)}</span><span>${MET[metric][1](s[metric])}${metric !== "n" ? ` <span class="muted">(${s.n})</span>` : ""}</span></li>`; }).join("")}</ul>
       <p class="muted">Areas: ${esc(d.source)}. Listings: ${esc(d.listing_source)}; fetched ${esc(d.fetched)}. Areas whose search hit Zillow's 500-result cap were re-searched in smaller tiles, so the counts cover every matching listing the searches returned.</p>`;
@@ -160,6 +160,10 @@
   }
   document.querySelectorAll("#citysw button").forEach(b => b.onclick = () => { location.hash = b.dataset.c; });
   $("#metric").onchange = e => { metric = e.target.value; draw(); route(); };
+  // back link: when we came from the main map (tapping the city's block), go Back so the map returns at the same view; otherwise open index.html
+  { const bk = document.querySelector("#cbar .back"), home = location.href.replace(/city\.html.*$/, "");
+    if (bk) bk.onclick = e => { const r = document.referrer || ""; if (history.length > 1 && r.startsWith(home) && !/city\.html/.test(r)) { e.preventDefault(); history.back(); } }; }
+  const CARD = { nashville: ["Davidson", "Davidson County card"], memphis: ["Shelby", "Shelby County card"] };  // the block's normal card on the main map (tapping the block now opens this page)
   $("#critbtn").onclick = () => { const el = $("#crit"); if (el.hidden) openCrit(); else el.hidden = true; };
   $("#pgrip").onclick = () => { $("#panel").classList.toggle("tall"); $("#cmap").classList.toggle("short"); setTimeout(() => map.invalidateSize(), 50); };
   window.addEventListener("hashchange", route);

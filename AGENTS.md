@@ -69,6 +69,7 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
   - Criteria are set in the browser for each main-app profile slot (names come from `kyx_prof_*`) and saved under `tnx_city_<slot>`. Defaults: house, condo or townhome, up to $600k, 2+ bd, 2+ ba, 1,000+ sq ft, no acreage minimum. The shared `profiles.js` is not changed.
   - `tnlinks.js` (TN only, loaded after `app.js`) adds the city link to the Layers panel and to the Davidson and Shelby county cards. `publish.sh` copies the city files, and `build.py` stamps `city.html`.
   - Test: `perf/test_city.py BASE TAG`.
+  - Tapping the Davidson or Shelby block opens `city.html#nashville` / `#memphis` directly (`STATE["cityPage"]` in build.py, shared app.js `ST.cityPage`); the city page links back to the county card. Test: `perf/test_blocktap.py BASE TAG Davidson=nashville,Shelby=memphis Rutherford`.
 - Thumbnails: `explorer/fetch_thumbs.py` (Wikidata/Commons photos, else an Esri satellite snapshot).
 
 ## Build, test, publish

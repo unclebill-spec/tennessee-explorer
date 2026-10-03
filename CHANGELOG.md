@@ -5,6 +5,9 @@ It is a sister site to the Kentucky Explorer (https://unclebill-spec.github.io/k
 Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up to that day is in the Kentucky CHANGELOG.
 New entries are added by `publish/publish.sh -m "message"`.
 
+## 2026-10-03
+- 07:51 ET: Tapping the Davidson (Nashville) or Shelby (Memphis) county block now opens its city map (city.html#nashville / #memphis) directly; phone Back and the page's '‹ TN map' link return to the map at the same view, and the city page links to the county card. Other counties keep their card; #county links and search still open the card. Shared app.js: generic per-state ST.cityPage config (same change as Massachusetts' Boston).
+
 ## 2026-10-02
 - 19:40 ET: Shared app.js: Top-10 pill carousel no longer clones pills when they all fit (MA showed 'Deals' twice); home price labels and Max price menus read configurable caps (ST.caps, Tennessee unchanged: $500k / $425k / $325k); secscan 'sk-' key pattern no longer matches mid-word (false positive on job URLs).
 - 18:30 ET: State switcher: add the Massachusetts Explorer (KY | MA | TN); shared app code synced from Kentucky (town/county wording, multi-state switcher)
