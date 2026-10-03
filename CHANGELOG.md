@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-03
+- 10:48 ET: State switcher: add Maine (new Maine Explorer); Compare areas shows n/a for a missing school result
 - 07:51 ET: Tapping the Davidson (Nashville) or Shelby (Memphis) county block now opens its city map (city.html#nashville / #memphis) directly; phone Back and the page's '‹ TN map' link return to the map at the same view, and the city page links to the county card. Other counties keep their card; #county links and search still open the card. Shared app.js: generic per-state ST.cityPage config (same change as Massachusetts' Boston).
 
 ## 2026-10-02
