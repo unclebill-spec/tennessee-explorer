@@ -91,3 +91,8 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
 ## Rules
 - Never commit secrets. Run secscan before every push. Pull before pushing. Use descriptive commit messages.
 - Don't get around site blocks (robots, captchas, logins). Use public pages only.
+
+## Ski areas + notable peaks (Oct 3, 2026)
+7 ski areas and 31 peaks, from explorer/mtn.json and explorer/img/mtn/. These are shared app files from KY; full notes are in /workspace/kentucky/explorer/AGENTS.md.
+- build.py has the mtn_build hook (`mtn_build.add(data)` before `write_split`, then `mtn_build.write_detail(OUT)`). Keep it if build.py is regenerated, or rerun `/workspace/mtn/scripts/hook_build.py /workspace/tennessee`.
+- Rebuild the data with `/workspace/mtn/scripts/make_state.py TN`. Test with `/workspace/mtn/test_mtn.py BASE TAG SKI_ID PEAK_ID`.
