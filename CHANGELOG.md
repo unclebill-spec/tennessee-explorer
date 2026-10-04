@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-04
+- 16:07 ET: Caves and waterfalls: the same land listed more than once is now shown once (most detailed listing kept); Border: caves and waterfalls on the property from neighboring states (bat / waterfall pins)
 - 15:17 ET: Caves and waterfalls on the property: flying-bat and waterfall pins + groups, 'Cave' and 'Falls' buttons, Map key, card with the listing's own words, acres, price and Nearby
 - 10:48 ET: 50+ acre lots under $250k (land or home): small black star pins + groups, '50+ ac' button, Map key row, card with acres, $/acre, dwelling and Nearby; border listings too
 - 08:03 ET: State switcher: shrinks and scrolls sideways on narrow phones (10 maps)
