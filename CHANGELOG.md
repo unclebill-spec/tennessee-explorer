@@ -5,6 +5,9 @@ It is a sister site to the Kentucky Explorer (https://unclebill-spec.github.io/k
 Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up to that day is in the Kentucky CHANGELOG.
 New entries are added by `publish/publish.sh -m "message"`.
 
+## 2026-10-04
+- 06:15 ET: State switcher: add Utah (9 maps)
+
 ## 2026-10-03
 - 20:56 ET: State switcher: add Idaho (8 maps)
 - 18:22 ET: State switcher: Montana and Wyoming added
