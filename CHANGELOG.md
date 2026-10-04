@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-04
+- 07:33 ET: State switcher: add New Hampshire (10 maps)
 - 06:15 ET: State switcher: add Utah (9 maps)
 
 ## 2026-10-03
