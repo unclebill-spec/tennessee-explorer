@@ -102,3 +102,7 @@ Everything lives on the shared work box under `/workspace/tennessee/`. Times are
 - Oct 3, 2026: purple bargain star on the Bargain filter button etc. (shared app.js/style.css; KY explorer/AGENTS.md 'Purple bargain star everywhere').
 - Oct 3, 2026: pill row fix kyxUI4 (shared app.js/style.css; KY explorer/AGENTS.md 'Pill row fix').
 - Oct 3, 2026: kyxUI5 pill row pinned bottom-left + short-window column fit (shared; KY explorer/AGENTS.md).
+
+### 50+ acre lots under $250k (Oct 4, 2026 ~10:31 AM ET, big-land worker)
+- Black-star layer `big-land` (50+ ac, < $250k, land or home), "50+ ac" button, Map key row, card; shared code from the KY explorer (see KY explorer/AGENTS.md, same date). build.py (marker BIGLAND) merges `/workspace/tennessee/bigland.json`.
+- Refresh: `/usr/bin/python3 /workspace/bigland/bigland.py TN --refresh` before build/publish (keeps the old file if Zillow blocks). Notes: /workspace/bigland/PROGRESS.md.
