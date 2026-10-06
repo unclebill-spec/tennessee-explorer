@@ -5,6 +5,9 @@ It is a sister site to the Kentucky Explorer (https://unclebill-spec.github.io/k
 Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up to that day is in the Kentucky CHANGELOG.
 New entries are added by `publish/publish.sh -m "message"`.
 
+## 2026-10-05
+- 20:33 ET: Anna profile: 5th top button for an engineer + spouse household (engineering jobs over $120k with relocation / bonus filters, spouse leasing and AR-billing jobs, 2bd/2ba homes up to $550k, K-6 schools, Anna area score, no hospitals) with 7 Top 10s: Top Pay, Biggest Bonus (est.), Best Relocation, Best Overall Job, Homes Closest to Job, Homes Closest to School, Best Balance Homes
+
 ## 2026-10-04
 - 20:41 ET: Fix: Kentucky border homes no longer say '(estimate) (estimate)' in the hospital-drive line
 - 16:07 ET: Caves and waterfalls: the same land listed more than once is now shown once (most detailed listing kept); Border: caves and waterfalls on the property from neighboring states (bat / waterfall pins)
