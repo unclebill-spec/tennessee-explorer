@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-05
+- 21:06 ET: Permanent RN jobs: cardiac cath lab postings are now hidden like the other cath lab jobs. 12 jobs (Ballad Bristol / Johnson City, Vanderbilt, Erlanger, UT Medical Center, Saint Thomas West, Highpoint Winchester) were filed under step-down because the word 'cardiac' matched before 'cath'; any job whose title or unit names the cath lab is now Cath lab / IR. Cath recovery, cath-lab step-down and holding jobs stay in.
 - 20:41 ET: Anna update: Arnold AFB / AEDC drive times fixed (routed to the public Wattendorf Hwy entrance), 336 Anna homes in 21 counties (Tullahoma / AEDC area added), 59 spouse jobs (Tri-Cities, Spring Hill / Columbia, Greeneville, Tullahoma added), Homes Closest to School uses A/B-rated K-5 schools, Best Balance adds pay nearby and cost of living, home cards show spouse jobs and the balance breakdown
 - 20:33 ET: Anna profile: 5th top button for an engineer + spouse household (engineering jobs over $120k with relocation / bonus filters, spouse leasing and AR-billing jobs, 2bd/2ba homes up to $550k, K-6 schools, Anna area score, no hospitals) with 7 Top 10s: Top Pay, Biggest Bonus (est.), Best Relocation, Best Overall Job, Homes Closest to Job, Homes Closest to School, Best Balance Homes
 
