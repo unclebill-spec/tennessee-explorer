@@ -5,6 +5,9 @@ It is a sister site to the Kentucky Explorer (https://unclebill-spec.github.io/k
 Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up to that day is in the Kentucky CHANGELOG.
 New entries are added by `publish/publish.sh -m "message"`.
 
+## 2026-10-07
+- 16:58 ET: Listings refresh: +11 new, -9 sold/off-market, 34 price drops (15 now pending/contingent, labeled); 50+ ac 68 -> 70; caves/waterfalls 43 -> 42 (+1 falls, -1 cave); bargains refreshed (3 in, 3 out); 2441 perm RN jobs; Anna: 44 eng / 49 spouse jobs (10 dead links dropped), 334 homes (2026-10-07)
+
 ## 2026-10-05
 - 23:51 ET: Anna profile: engineering jobs now labeled as Shawn's (Anna's husband), leasing/billing jobs as Anna's
 - 23:17 ET: Add North Carolina to the state switcher; border items now include North Carolina homes, hospitals, schools, colleges, attractions and RN jobs within ~15 mi
