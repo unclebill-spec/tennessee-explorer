@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-07
+- 17:37 ET: Target store cards: the location row now reads 'County: Davidson County' (shared app code, same on every map).
 - 17:17 ET: Target stores layer: every Target in Tennessee (32, Target's own store directory) plus 4 within ~15 mi over the line (MS 2, AL 1, VA 1; tagged, not counted in county stats). Small red bullseye pins (grouped, faint dots when zoomed out), right-side 'Target' button (also in Anna mode), store cards with address, phone, regular hours and services, share links #target=<store number>, and the nearest Target (OSRM free-flow drive time) in every property card's Nearby section.
 - 16:58 ET: Listings refresh: +11 new, -9 sold/off-market, 34 price drops (15 now pending/contingent, labeled); 50+ ac 68 -> 70; caves/waterfalls 43 -> 42 (+1 falls, -1 cave); bargains refreshed (3 in, 3 out); 2441 perm RN jobs; Anna: 44 eng / 49 spouse jobs (10 dead links dropped), 334 homes (2026-10-07)
 
