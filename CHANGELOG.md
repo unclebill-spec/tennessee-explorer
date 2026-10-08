@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-07
+- 20:51 ET: Active filter on top: whatever right-side button or Top 10 list is selected (Target, Bargain, 50+ ac, Cave, Falls, Jobs, Anna's buttons, a Top 10 list...) now draws its pins 1.4x larger (its groups 1.15x) and above every other pin; always-on pins (trauma centers, airports, cities...) stay visible but smaller (0.72x) and underneath while it is on. Turning the filter off restores the normal map exactly (shared app code, same on every map).
 - 17:37 ET: Target store cards: the location row now reads 'County: Davidson County' (shared app code, same on every map).
 - 17:17 ET: Target stores layer: every Target in Tennessee (32, Target's own store directory) plus 4 within ~15 mi over the line (MS 2, AL 1, VA 1; tagged, not counted in county stats). Small red bullseye pins (grouped, faint dots when zoomed out), right-side 'Target' button (also in Anna mode), store cards with address, phone, regular hours and services, share links #target=<store number>, and the nearest Target (OSRM free-flow drive time) in every property card's Nearby section.
 - 16:58 ET: Listings refresh: +11 new, -9 sold/off-market, 34 price drops (15 now pending/contingent, labeled); 50+ ac 68 -> 70; caves/waterfalls 43 -> 42 (+1 falls, -1 cave); bargains refreshed (3 in, 3 out); 2441 perm RN jobs; Anna: 44 eng / 49 spouse jobs (10 dead links dropped), 334 homes (2026-10-07)
