@@ -5,6 +5,9 @@ It is a sister site to the Kentucky Explorer (https://unclebill-spec.github.io/k
 Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up to that day is in the Kentucky CHANGELOG.
 New entries are added by `publish/publish.sh -m "message"`.
 
+## 2026-10-15
+- 03:58 ET: Listings refresh r6: +0 new, -0 sold/off-market, 0 price drops, 0 price changes; bigland/cavefalls/perm refreshed (r6-2026-10-15)
+
 ## 2026-10-14
 - 07:47 ET: Listings refresh r5: +5 new, -5 sold/off-market, 8 price drops, 9 price changes; bigland/cavefalls/perm refreshed (r5-2026-10-13)
 
