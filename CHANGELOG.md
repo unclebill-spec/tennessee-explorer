@@ -6,6 +6,7 @@ Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up t
 New entries are added by `publish/publish.sh -m "message"`.
 
 ## 2026-10-25
+- 08:07 ET: Listings refresh r14: +1 new, -3 sold/off-market, 7 price drops, 11 price changes; bigland/cavefalls/perm refreshed (r14-2026-10-25)
 - 02:25 ET: Listings refresh r13: +16 new, -9 sold/off-market, 19 price drops, 24 price changes; bigland/cavefalls/perm refreshed (r13-2026-10-23)
 
 ## 2026-10-22
