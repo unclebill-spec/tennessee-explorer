@@ -1,3 +1,5 @@
+> **Before any work here:** read /workspace/RESOURCES.md (team rules), your /workspace/bot-tools/<slug>.md tool list, and the game order in /workspace/NAMES.md. (Will, Nov 1, 2026)
+
 # AGENTS.md: handoff for agents working on Tennessee Explorer
 
 Owner: Bill Weathersbee. Live: https://unclebill-spec.github.io/tennessee-explorer/ (repo `unclebill-spec/tennessee-explorer`, GitHub Pages from `main`).
