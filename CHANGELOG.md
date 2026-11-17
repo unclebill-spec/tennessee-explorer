@@ -5,6 +5,9 @@ It is a sister site to the Kentucky Explorer (https://unclebill-spec.github.io/k
 Kentucky Explorer on Oct 1, 2026 and made generic per state, so its history up to that day is in the Kentucky CHANGELOG.
 New entries are added by `publish/publish.sh -m "message"`.
 
+## 2026-11-17
+- 03:49 ET: Listings refresh r25: +0 new, -5 sold/off-market, 4 price drops, 4 price changes; bigland/cavefalls/perm refreshed (r25-2026-11-16)
+
 ## 2026-11-16
 - 11:04 ET: State switcher: add Nebraska, South Dakota, North Dakota
 - 11:03 ET: State switcher: add Nebraska, South Dakota, North Dakota
